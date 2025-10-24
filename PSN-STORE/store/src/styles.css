@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+	background: #F5DD02;
+	background: linear-gradient(90deg, rgba(245, 221, 2, 1) 6%, rgba(191, 164, 8, 1) 16%, rgba(87, 76, 4, 1) 47%, rgba(0, 0, 0, 1) 100%);
+	position: relative; /* cria contexto para o pseudo-elemento */
+}
+
+/* Marca-d'água: logo semitransparente fixa no fundo do site */
+body::before{
+	content: "";
+	position: fixed;
+	inset: 0; /* top:0; right:0; bottom:0; left:0 */
+	background-image: url('/assets/logo_ligth.png');
+	background-repeat: no-repeat;
+	background-position: center center; /* ajustar conforme desejado */
+	background-size: 40%; /* ajustar para controlar o tamanho */
+	opacity: 0.08; /* ajustar entre 0 (invisível) e 1 (opaco) */
+	pointer-events: none; /* não interfere em cliques */
+	z-index: 0; /* fica atrás do conteúdo que terá z-index maior */
+	will-change: opacity, transform;
+}
+
+/* Garante que o conteúdo do app fique acima da marca-d'água */
+app-root{
+	position: relative;
+	z-index: 1;
+}

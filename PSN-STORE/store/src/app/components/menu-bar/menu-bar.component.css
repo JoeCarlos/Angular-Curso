@@ -1,0 +1,75 @@
+.menu-bar__container {
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		z-index: 999;
+		background-color: #111111;
+		width: 100%;
+		height: 40px;
+		justify-content: space-between; /* separa logo e itens */
+		box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+	}
+
+.menu-bar__logo>img{
+    height: 100%;
+    width: auto;
+}
+
+/* Alinha o logo e o título lado a lado */
+.menu-bar__logo{
+	display: flex;
+	align-items: center;
+	gap: 10px; /* espaço entre ícone e texto */
+	padding-left: 12px;
+}
+
+.menu-bar__title{
+	font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', Arial;
+	font-size: 18px; /* valor base para desktop */
+	font-weight: 700;
+	color: #f7f7f8; /* cor escura para contraste */
+	letter-spacing: 0.5px;
+	line-height: 1;
+}
+
+.menu-bar__title--accent{
+	color: #ffffff; /* cor de destaque (azul PlayStation-like) */
+}
+
+/* Responsividade: reduz fonte e gap em telas pequenas */
+@media (max-width: 480px){
+	.menu-bar__container{
+		height: 48px; /* um pouco maior se precisar */
+	}
+	.menu-bar__title{
+		font-size: 14px;
+	}
+	.menu-bar__logo{
+		gap: 6px;
+		padding-left: 8px;
+	}
+}
+
+/* Espaçamento da área de itens (lado direito) */
+.menu-bar__item{
+	display: flex;
+	align-items: center;
+	padding-right: 16px; /* ajuste conforme necessário */
+}
+
+.menu-bar__item ul{
+	list-style: none;
+	display: flex;
+	gap: 18px; /* espaço entre os itens do menu */
+	align-items: center;
+}
+
+.menu-bar__item ul li a{
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.menu-bar__item ul li a:hover{
+	color: #8b7e00;
+}
