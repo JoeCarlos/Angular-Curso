@@ -8,6 +8,9 @@ import { CardComponent } from './components/card/card.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { CardLabelComponent } from './components/card/card-label/card-label.component';
 import { CardPrincingComponent } from './components/card/card-princing/card-princing.component';
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import { DetalhesComponent } from './components/detalhes/detalhes.component';
+import { LoginComponent } from './compontents/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,19 @@ import { CardPrincingComponent } from './components/card/card-princing/card-prin
     CardComponent,
     MenuBarComponent,
     CardLabelComponent,
-    CardPrincingComponent
+    CardPrincingComponent,
+    DetalhesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+		    { provide: LOCALE_ID, useValue: 'pt-BR' },
+   			 // Opcional, mas recomendado para evitar avisos e definir o default:
+    		{ provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

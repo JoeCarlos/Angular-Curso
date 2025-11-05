@@ -5,10 +5,10 @@
 	<div class="card-princing__value">
 		<div class="card-princing__value__console">
 			<span>|</span>
-			<p>{{gameType}}</p>
+			<p>{{gameType | titlecase}}</p>
 		</div>
 		<div class="card-princing__vlaue__money">
-			<p class="game-price">{{gamePrice}}</p>
+			<p class="game-price">{{gamePrice | currency}}</p>
 		</div>
 	</div>
 </div>
